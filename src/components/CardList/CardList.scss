@@ -1,0 +1,13 @@
+.card-list-wrapper {
+	width: 660px;
+	min-height: 680px;
+	background: linear-gradient(160deg, #e1b2ab 0%, #bad2e2 90%);
+	padding: 32px;
+	border-radius: 10px;
+	box-shadow: 12px 15px 20px 0 rgba(194, 206, 214, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: auto;
+}
