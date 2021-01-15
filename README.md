@@ -6,6 +6,8 @@
 
 2. Install dependencies
    In your terminal after you clone this project down, you can either run `yarn` or `npm install` to build all the dependencies in the project.
+   
+3. `npm start` to run this game
 
 ### What this project uses:
 
