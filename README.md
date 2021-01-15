@@ -1,6 +1,6 @@
-###Matching Memory game!
+### Matching Memory game!
 
-#How to play on local:
+## How to play on local:
 
 1. Clone to your local
 
