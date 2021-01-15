@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card.js';
 import Popup from '../Popup/Popup.js';
 
-import cardIcon from '../../constants/cardIcon';
 import { shuffle, result } from '../../utils/shuffle';
-// import result from '../../utils/shuffle';
 
 import './CardList.scss';
 
