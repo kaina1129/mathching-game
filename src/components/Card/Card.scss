@@ -1,16 +1,22 @@
 .card {
 	width: 125px;
 	height: 125px;
-	background-color: #dec4c3;
+	background-color: #f2f2f2;
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	box-shadow: 8px 12px 20px 0 rgba(188, 139, 137, 0.5);
 	margin: 10px;
+	cursor: pointer;
 
 	i {
 		color: #f2f2f2;
 		font-size: 45px;
+	}
+
+	&.card-open {
+		background-color: #dec4c3;
+		transform: rotateY(0);
 	}
 }
