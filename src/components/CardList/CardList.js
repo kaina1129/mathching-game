@@ -1,62 +1,81 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Card from '../Card/Card.js';
 import Popup from '../Popup/Popup.js';
 
 import cardIcon from '../../constants/cardIcon';
-import shuffle from '../../utils/shuffle';
+import { shuffle, result } from '../../utils/shuffle';
+// import result from '../../utils/shuffle';
 
 import './CardList.scss';
 
 const CardList = () => {
-	const [popup, setPopup] = useState(true);
-	const [matchedCard, setMatchCard] = useState([]);
+	const [popup, setPopup] = useState(false);
 	const [openedCards, setOpenedCards] = useState([]);
 	const [click, setClick] = useState([]);
+	const [allCards, setAllCards] = useState(result);
 
-	shuffle(cardIcon);
+	console.log(popup);
 
-	const currentCard = this;
-	const previousCard = openedCards[0];
+	useEffect(() => {
+		openedCards.length === 2 && compareTwoCard();
+	}, [openedCards]);
 
-	const handleClickOnCard = (i) => {
-		console.log(cardIcon[i]);
-		console.log(openedCards);
-		setClick(cardIcon[i] === true);
-		if (openedCards.length === 1) {
-			const newCard = [...openedCards];
-			newCard.push(cardIcon[i]);
-			setOpenedCards(newCard);
-			compareTwoCard(currentCard, previousCard);
-		} else openedCards.push(cardIcon[i]);
+	const handleClickOnCard = (icon, i) => {
+		const newClick = [...click];
+		newClick[i] = true;
+		setClick(newClick);
+
+		const newOpenedCard = [...openedCards];
+		newOpenedCard.push({ icon: icon, index: i });
+		setOpenedCards(newOpenedCard);
 	};
 
 	const compareTwoCard = () => {
-		if (currentCard === [previousCard]) {
-			matchedCard.push(currentCard, previousCard);
-			setOpenedCards([]);
-			isGameOver();
-		} else setOpenedCards([]);
+		if (openedCards[0].icon !== openedCards[1].icon) {
+			setTimeout(() => {
+				const newClick = [...click];
+				newClick[openedCards[0].index] = false;
+				newClick[openedCards[1].index] = false;
+				setClick(newClick);
+			}, 400);
+		}
+
+		setOpenedCards([]);
+		isGameOver();
 	};
 
 	const isGameOver = () => {
-		if (matchedCard.length === cardIcon.length) {
+		const result = click.filter(function (v) {
+			return v === true;
+		});
+		console.log(result);
+		if (result.length === 16) {
+			console.log('1');
 			setPopup(true);
 		}
 	};
 
+	const retryGame = () => {
+		const newAllCards = [...allCards];
+		const newGame = shuffle(newAllCards);
+		setAllCards(newGame);
+		setClick([]);
+		setPopup(false);
+	};
+
 	return (
 		<div className='card-list-wrapper'>
-			{cardIcon.map((icon, i) => (
+			{allCards.map((icon, i) => (
 				<Card
 					handleClickOnCard={handleClickOnCard}
 					i={i}
 					icon={icon}
 					key={i}
-					click={click}
+					click={click[i]}
 				/>
 			))}
-			{popup ? <Popup setPopup={setPopup} /> : null}
+			{popup && <Popup setPopup={setPopup} retryGame={retryGame} />}
 		</div>
 	);
 };

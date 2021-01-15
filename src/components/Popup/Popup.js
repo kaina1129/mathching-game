@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Popup.scss';
 
-const Popup = ({ setPopup }) => {
+const Popup = ({ setPopup, retryGame }) => {
 	return (
 		<div className='popup-wrapper'>
 			<div className='popup-container'>
@@ -12,8 +12,8 @@ const Popup = ({ setPopup }) => {
 					<p>You made it!</p>
 				</div>
 				<div className='button-container'>
-					<button>Retry</button>
-					<button>Cancel</button>
+					<button onClick={retryGame}>Retry</button>
+					<button onClick={() => setPopup(false)}>Cancel</button>
 				</div>
 			</div>
 		</div>

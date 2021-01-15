@@ -2,6 +2,8 @@
 	width: 125px;
 	height: 125px;
 	background-color: #f2f2f2;
+	// background-color: rgba($color: #fff, $alpha: 0.1);
+
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
@@ -17,6 +19,7 @@
 
 	&.card-open {
 		background-color: #dec4c3;
+		// background-color: rgba($color: #fff, $alpha: 0.1);
 		transform: rotateY(0);
 	}
 }
