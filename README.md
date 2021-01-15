@@ -1,15 +1,13 @@
-Matching Memory game!
+###Matching Memory game!
 
-How to play on local:
+#How to play on local:
 
-clone this repo or download and extract via zip
-open the folder
-Open index.html file with any browser.
-Clicking on tiles will turn them over so that you can see what lies on them.
-Your goal is to match two tiles of the same type at a time.
-Then try to match all pairs in as minimum moves as possible.
-A fun game for users to play!
+1. Clone to your local
 
-🔥 React with React hooks
-🌹 Styles (Sass) and styled-component.
+2. Install dependencies
+   In your terminal after you clone this project down, you can either run `yarn` or `npm install` to build all the dependencies in the project.
 
+## What this project uses:
+
+- :fire: React with React hooks
+- :rose: Sass and styled-component
