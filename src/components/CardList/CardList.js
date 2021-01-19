@@ -13,7 +13,6 @@ const CardList = () => {
 	const [click, setClick] = useState([]);
 	const [allCards, setAllCards] = useState(result);
 
-	console.log(popup);
 
 	useEffect(() => {
 		openedCards.length === 2 && compareTwoCard();
@@ -47,9 +46,7 @@ const CardList = () => {
 		const result = click.filter(function (v) {
 			return v === true;
 		});
-		console.log(result);
 		if (result.length === 16) {
-			console.log('1');
 			setPopup(true);
 		}
 	};
