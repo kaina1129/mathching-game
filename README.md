@@ -2,12 +2,7 @@
 
 ### How to play on local:
 
-1. Clone to your local
-
-2. Install dependencies
-   In your terminal after you clone this project down, you can either run `yarn` or `npm install` to build all the dependencies in the project.
-   
-3. `npm start` to run this game
+Visit：https://kaina1129.github.io/mathching-game/
 
 ### What this project uses:
 
